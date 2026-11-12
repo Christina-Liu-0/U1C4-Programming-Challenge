@@ -8,7 +8,7 @@ public class Solution {
 
     public boolean endsLy(String x) {
         int len = x.length();
-        String ending = x.substring(len-1,len);
+        String ending = x.substring(len-1,len+1);
         if (x.length() < 2) {
             return false;
         } else if (ending == "ly") {
@@ -36,12 +36,12 @@ public class Solution {
     public String withoutX(String s1) {
         int len = s1.length();
         if (s1.substring(0,1) == "x") {
-            if (s1.substring(len-1) == "x") {
-            return s1.substring(1, len-1);
+            if (s1.substring(len) == "x") {
+            return s1.substring(1,len);
         }
          return s1.substring(1);
         } if (s1.substring(len) == "x") {
-            return s1.substring(0, len-1); 
+            return s1.substring(0, len); 
         }
         return s1;
     }
@@ -49,12 +49,12 @@ public class Solution {
     public String fizzString(String s1) {
         int len = s1.length();
         if (s1.substring(0,1) == "f") {
-            if (s1.substring(len-1) == "b") {
+            if (s1.substring(len) == "b") {
                 return "FizzBuzz";
             }
             return "Fizz";
         } 
-         if (s1.substring(0, 2) == "b") {
+         if (s1.substring(0,1) == "b") {
                 return "Buzz";
             }
             return s1;
